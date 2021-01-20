@@ -18,8 +18,8 @@ const Index = () => (
       <Box
         as={"model-viewer" as React.ElementType<any>}
         style={{
-          height: "600px",
-          width: "600px",
+          height: "200px",
+          width: "200px",
         }}
         data-name="baloon"
         src="./models/nigger.glb"
