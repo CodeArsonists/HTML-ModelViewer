@@ -1,56 +1,35 @@
-import {
-  Link as ChakraLink,
-  Text,
-  Code,
-  List,
-  ListIcon,
-  ListItem,
-} from '@chakra-ui/react'
-import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
-
-import { Hero } from '../components/Hero'
-import { Container } from '../components/Container'
-import { Main } from '../components/Main'
-import { DarkModeSwitch } from '../components/DarkModeSwitch'
-import { CTA } from '../components/CTA'
-import { Footer } from '../components/Footer'
+import { Box, Flex, Heading } from "@chakra-ui/react";
+import React from "react";
+import Head from "next/head";
 
 const Index = () => (
-  <Container height="100vh">
-    <Hero />
-    <Main>
-      <Text>
-        Example repository of <Code>Next.js</Code> + <Code>chakra-ui</Code> +{' '}
-        <Code>typescript</Code>.
-      </Text>
+  <Flex flexDir="column" align="center" justify="center" height="100vh" w="100vw">
+    <Head>
+      <script
+        type="module"
+        src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+      ></script>
+      <script
+        noModule
+        src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"
+      ></script>
+    </Head>
+      <Heading>Model Viewer Concept</Heading>
+      <Box
+        as={"model-viewer" as React.ElementType<any>}
+        style={{
+          height: "600px",
+          width: "600px",
+        }}
+        data-name="baloon"
+        src="./models/nigger.glb"
+        ar
+        ar-modes="scene-viewer quick-look"
+        camera-controls
+        auto-rotate
+        poster=""
+      />
+  </Flex>
+);
 
-      <List spacing={3} my={0}>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          <ChakraLink
-            isExternal
-            href="https://chakra-ui.com"
-            flexGrow={1}
-            mr={2}
-          >
-            Chakra UI <LinkIcon />
-          </ChakraLink>
-        </ListItem>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          <ChakraLink isExternal href="https://nextjs.org" flexGrow={1} mr={2}>
-            Next.js <LinkIcon />
-          </ChakraLink>
-        </ListItem>
-      </List>
-    </Main>
-
-    <DarkModeSwitch />
-    <Footer>
-      <Text>Next ❤️ Chakra</Text>
-    </Footer>
-    <CTA />
-  </Container>
-)
-
-export default Index
+export default Index;
