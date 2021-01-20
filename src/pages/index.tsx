@@ -29,6 +29,7 @@ const Index = () => (
       }}
       data-name="coke"
       src="./models/nigger.glb"
+      ios-src="./models/nigger.usdz"
       ar
       ar-modes="webxr scene-viewer quick-look"
       ar-scale="auto"
